@@ -17,10 +17,10 @@ target_link_libraries(${PROJECT_NAME} PRIVATE raylib)
 add_custom_target(copy_resources ALL
         COMMAND ${CMAKE_COMMAND} -E copy_directory
         ${CMAKE_SOURCE_DIR}/shaders
-        ${CMAKE_SOURCE_DIR}/Release/shaders
+        ${CMAKE_SOURCE_DIR}\\$<CONFIG>/shaders
         COMMENT "Copying resources into binary directory")
 
-add_dependencies(${PROJECT_NAME} copy_resources)
+add_dependencies(${PROJECT_NAME} copy_resources) #POKONAŁEM TO ESSZ
 
 
 set_target_properties(${PROJECT_NAME} PROPERTIES RUNTIME_OUTPUT_DIRECTORY_DEBUG ${CMAKE_CURRENT_SOURCE_DIR}/Debug)
